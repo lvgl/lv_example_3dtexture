@@ -60,7 +60,12 @@
     "materials" : [
         {
             "name" : "Material",
-            "pbrMetallicRoughness" : {}
+            "doubleSided" : true,
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [ 1.0, 0.1, 0.15, 1.0 ],
+                "roughnessFactor" : 0.05,
+                "metallicFactor" : 0.01
+            }
         }
     ],
     "meshes" : [
@@ -82,6 +87,7 @@
         {
             "mesh" : 0,
             "name" : "Teapot",
+            "rotation" : [ 0, 0.8660254, 0, 0.5 ],
             "scale" : [
                 10,
                 10,

@@ -1,2 +1,0 @@
-https://github.com/KhronosGroup/Vulkan-Samples-Assets/blob/8db8ce9c528330f0b1261b07531b009732b08731/scenes/teapot.gltf
-https://github.com/KhronosGroup/Vulkan-Samples-Assets/blob/8db8ce9c528330f0b1261b07531b009732b08731/scenes/torusknot.gltf

@@ -1,20 +1,46 @@
-# `lv_example_3dtexture`
+# `lv_gltf_viewer`
 
-Example usage of the LVGL `3dtexture` widget.
+A simple glTF file viewer, made using the LVGL `3dtexture` widget.
 
-![example running screenclip](readme_image.png)
+![example running screenclip one](media/readme/readme_image.png)
 
 Ensure [GLFW is installed](https://docs.lvgl.io/master/details/integration/driver/opengles.html) for this example.
 
+## Getting Started
+
 ```shell
+git clone <TODO>
 git submodule update --init
-cmake -B build -S .
-make -C build -j$(nproc) lvgl_workspace
-./build/lvgl_workspace
+cmake -B build
+cmake --build build -j$(nproc)
+./build/gltf_view -in ./gltfs/logo1.glb
 ```
 
-For demonstration purposes, there is a very simple
-glTF loader implemented in `gltf_loader.c`. It can only
-handle very simple glTFs with one mesh described by
-a `float` triangle vertex array and a `uint16_t` index array.
-Textured meshes are ignored.
+---
+
+The STB Image library is included temporarily, just copied from the latest build.  Ultimately it should probably be added as a git submodule, but it seems like that will add a few other things that aren't necessary so I'd like to look into a more minimal install for that.
+
+---
+
+To make this the default gltf / glb file viewer on your Raspberry Pi, you can do the following:
+
+(from the root directory of this project)
+```bash
+cp ./EXAMPLE_gltf-view.desktop ~/.local/share/applications/gltf-view.desktop
+xdg-mime default gltf-view.desktop model/gltf-binary
+xdg-mime default gltf-view.desktop model/gltf-json
+```
+
+Now when you double click a gltf file in your file-manager, it should open glTF-View.
+
+You can confirm the mime-types are setup correctly by viewing 
+```
+~/.config/mimeapps.list
+```
+
+---
+More Samples:
+
+![example running screenclip two](media/readme/screenshot_image1.png)
+
+![example running screenclip three](media/readme/screenshot_image2.png)

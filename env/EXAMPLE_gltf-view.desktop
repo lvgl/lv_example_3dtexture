@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=LVGL glTF Viewer
+Exec=/home/pi/Desktop/lv_gltf_viewer/run.sh %f
+Categories=Graphics
+Terminal=false
+X-KeepTerminal=false
